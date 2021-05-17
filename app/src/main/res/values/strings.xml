@@ -1,3 +1,23 @@
 <resources>
     <string name="app_name">MBTA Buddy</string>
+    <string-array name="station_names_redline">
+        <item>Alewife</item>
+        <item>Davis</item>
+        <item>Porter</item>
+        <item>Harvard</item>
+        <item>Central</item>
+        <item>Kendall/MIT</item>
+        <item>Charles/MGH</item>
+        <item>Park Street</item>
+        <item>Downtown Crossing</item>
+        <item>South Station</item>
+        <item>Broadway</item>
+        <item>Andrew</item>
+        <item>JFK/UMass</item>
+        <item>North Quincy</item>
+        <item>Wollaston</item>
+        <item>Quincy Center</item>
+        <item>Quincy Adams</item>
+        <item>Braintree</item>
+    </string-array>
 </resources>
