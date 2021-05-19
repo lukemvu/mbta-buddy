@@ -10,30 +10,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var colorList = listOf<String>("Red")
+        //TODO
+        // 1.
 
-        var stationList = mutableListOf<Station>(
-            Station("Alewife", colorList, 0, 0),
-            Station("Davis", colorList, 0, 0),
-            Station("Porter", colorList, 0, 0),
-            Station("Harvard", colorList, 0, 0),
-            Station("Central", colorList, 0, 0),
-            Station("Kendall/MIT", colorList, 0, 0),
-            Station("Charles", colorList, 0, 0),
-            Station("Park Street", colorList, 0, 0),
-            Station("Downtown", colorList, 0, 0),
-            Station("South Station", colorList, 0, 0),
-            Station("Broadway", colorList, 0, 0),
-            Station("Andrew", colorList, 0, 0),
-            Station("JFK/UMASS", colorList, 0, 0),
-            Station("North Quincy", colorList, 0, 0),
-            Station("Wollaston", colorList, 0, 0),
-            Station("Quincy Center", colorList, 0, 0),
-            Station("Quincy Adams", colorList, 0, 0),
-            Station("Braintree", colorList, 0, 0)
-        )
+        val station_list = resources.getStringArray(R.array.rl_alewife_braintree)
 
-        val adapter = StationAdapter(stationList)
+        val adapter = StationAdapter(applicationContext, station_list)
+
         stationsRecyclerView.adapter = adapter
         stationsRecyclerView.layoutManager = LinearLayoutManager(this)
 

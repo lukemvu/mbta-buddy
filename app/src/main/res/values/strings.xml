@@ -1,6 +1,26 @@
 <resources>
     <string name="app_name">MBTA Buddy</string>
-    <string-array name="station_names_redline">
+    <string-array name="rl_alewife_braintree">
+        <item>Alewife</item>
+        <item>Davis</item>
+        <item>Porter</item>
+        <item>Harvard</item>
+        <item>Central</item>
+        <item>Kendall/MIT</item>
+        <item>Charles/MGH</item>
+        <item>Park St</item>
+        <item>Downtown Crossing</item>
+        <item>South Station</item>
+        <item>Broadway</item>
+        <item>Andrew</item>
+        <item>JFK/UMass</item>
+        <item>North Quincy</item>
+        <item>Wollaston</item>
+        <item>Quincy Center</item>
+        <item>Quincy Adams</item>
+        <item>Braintree</item>
+    </string-array>
+    <string-array name="rl_alewife_ashmont">
         <item>Alewife</item>
         <item>Davis</item>
         <item>Porter</item>
@@ -14,10 +34,19 @@
         <item>Broadway</item>
         <item>Andrew</item>
         <item>JFK/UMass</item>
-        <item>North Quincy</item>
-        <item>Wollaston</item>
-        <item>Quincy Center</item>
-        <item>Quincy Adams</item>
-        <item>Braintree</item>
+        <item>Savin Hill</item>
+        <item>Fields Corner</item>
+        <item>Shawmut</item>
+        <item>Ashmont</item>
+    </string-array>
+    <string-array name="rlm_ashmont_mattapan">
+        <item>Ashmont</item>
+        <item>Cedar Grove</item>
+        <item>Butler</item>
+        <item>Milton</item>
+        <item>Central Ave</item>
+        <item>Valley Rd</item>
+        <item>Capen St</item>
+        <item>Mattapan</item>
     </string-array>
 </resources>

@@ -4,15 +4,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
-    android:id="@+id/mainLayout">
+    android:layout_height="75dp"
+    android:id="@+id/secondaryLayout">
 
     <ImageView
-        android:id="@+id/stationImg"
-        android:layout_width="120dp"
+        android:id="@+id/stationInfoImg"
+        android:layout_width="75dp"
         android:layout_height="match_parent"
-        android:src="@drawable/ic_red_station_middle"
-        android:contentDescription="station"
+        android:src="@drawable/ic_launcher_background"
+        android:contentDescription="station_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -20,16 +20,26 @@
     </ImageView>
 
     <TextView
-        android:id="@+id/stationName"
+        android:id="@+id/stationInfoName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Dummy Text"
+        android:text="DIRECTION"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/stationImg"
+        app:layout_constraintEnd_toStartOf="@+id/arrival_time"
+        app:layout_constraintStart_toEndOf="@+id/stationInfoImg"
         app:layout_constraintTop_toTopOf="parent">
 
     </TextView>
+
+    <TextView
+        android:id="@+id/arrival_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ARRIVAL_TIME"
+        app:layout_constraintBottom_toBottomOf="@+id/stationInfoName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/stationInfoName" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
