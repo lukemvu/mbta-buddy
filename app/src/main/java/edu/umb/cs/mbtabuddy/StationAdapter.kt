@@ -13,17 +13,16 @@ import kotlinx.android.synthetic.main.item_station.view.*
 
 class StationAdapter(
         var mContext: Context,
-        var stationList: Array<String>
+        var stationList: Array<String>,
+         var stationMap: Map<String, String>
         ) : RecyclerView.Adapter<StationAdapter.StationViewHolder>() {
 
     inner class StationViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         init {
-            var stationName: TextView = itemView.findViewById(R.id.stationName)
-            var stationImg: ImageView = itemView.findViewById(R.id.stationImg)
-            var mainLayout: ConstraintLayout = itemView.findViewById(R.id.mainLayout)
             itemView.setOnClickListener {
                 val intent = Intent(itemView.context, StationInfo::class.java)
-                println(layoutPosition)
+                intent.putExtra("stationName", stationList[layoutPosition])
+                intent.putExtra("stationId", stationMap[stationList[layoutPosition]])
                 itemView.context.startActivity(intent)
             }
         }
@@ -42,7 +41,14 @@ class StationAdapter(
     override fun onBindViewHolder(holder: StationViewHolder, position: Int) {
         holder.itemView.apply {
             stationName.text = stationList[position]
-            stationImg.setImageResource(R.drawable.ic_red_station_middle)
+            val imgSrc = if (position==0) {
+                R.drawable.ic_rl_stop_top
+            } else if (position == stationList.size-1) {
+                R.drawable.ic_rl_stop_bottom
+            } else {
+                R.drawable.ic_red_station_middle
+            }
+            stationImg.setImageResource(imgSrc)
         }
     }
 

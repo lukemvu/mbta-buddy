@@ -20,16 +20,24 @@
     </ImageView>
 
     <TextView
+        android:id="@+id/stationInfoDirection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:text="DIRECTION"
+        app:layout_constraintStart_toEndOf="@+id/stationInfoImg"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:id="@+id/stationInfoName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="DIRECTION"
-        android:textSize="30sp"
+        android:text="DESTINATION"
+        android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/arrival_time"
-        app:layout_constraintStart_toEndOf="@+id/stationInfoImg"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintStart_toStartOf="@+id/stationInfoDirection"
+        app:layout_constraintTop_toBottomOf="@+id/stationInfoDirection">
 
     </TextView>
 
@@ -37,9 +45,12 @@
         android:id="@+id/arrival_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
         android:text="ARRIVAL_TIME"
-        app:layout_constraintBottom_toBottomOf="@+id/stationInfoName"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/stationInfoName" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

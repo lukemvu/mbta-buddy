@@ -20,6 +20,28 @@
         <item>Quincy Adams</item>
         <item>Braintree</item>
     </string-array>
+
+    <string-array name="rl_alewife_braintree_id">
+        <item>place-alfcl</item>
+        <item>place-davis</item>
+        <item>place-portr</item>
+        <item>place-harsq</item>
+        <item>place-cntsq</item>
+        <item>place-knncl</item>
+        <item>place-chmnl</item>
+        <item>place-pktrm</item>
+        <item>place-dwnxg</item>
+        <item>place-sstat</item>
+        <item>place-brdwy</item>
+        <item>place-andrw</item>
+        <item>place-jfk</item>
+        <item>place-nqncy</item>
+        <item>place-wlsta</item>
+        <item>place-qnctr</item>
+        <item>place-qamnl</item>
+        <item>place-brntn</item>
+    </string-array>
+
     <string-array name="rl_alewife_ashmont">
         <item>Alewife</item>
         <item>Davis</item>
@@ -39,6 +61,28 @@
         <item>Shawmut</item>
         <item>Ashmont</item>
     </string-array>
+
+    <string-array name="rl_alewife_ashmont_id">
+        <item>place-alfcl</item>
+        <item>place-davis</item>
+        <item>place-portr</item>
+        <item>place-harsq</item>
+        <item>place-cntsq</item>
+        <item>place-knncl</item>
+        <item>place-chmnl</item>
+        <item>place-pktrm</item>
+        <item>place-dwnxg</item>
+        <item>place-sstat</item>
+        <item>place-brdwy</item>
+        <item>place-andrw</item>
+        <item>place-jfk</item>
+        <item>place-shmnl</item>
+        <item>place-fldcr</item>
+        <item>place-smmnl</item>
+        <item>place-qamnl</item>
+        <item>place-asmnl</item>
+    </string-array>
+
     <string-array name="rlm_ashmont_mattapan">
         <item>Ashmont</item>
         <item>Cedar Grove</item>
@@ -49,4 +93,5 @@
         <item>Capen St</item>
         <item>Mattapan</item>
     </string-array>
+
 </resources>

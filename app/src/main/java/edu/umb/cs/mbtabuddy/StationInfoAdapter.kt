@@ -13,16 +13,10 @@ import kotlinx.android.synthetic.main.item_station_info.view.*
 
 class StationInfoAdapter(
         var mContext: Context,
-        var station: Array<String>
+        var predictionList: List<StopPrediction>
 ) : RecyclerView.Adapter<StationInfoAdapter.StationInfoViewHolder>() {
 
-    inner class StationInfoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        init {
-            var stationInfoName: TextView = itemView.findViewById(R.id.stationInfoName)
-            var stationInfoImg: ImageView = itemView.findViewById(R.id.stationInfoImg)
-            var secondaryLayout: ConstraintLayout = itemView.findViewById(R.id.secondaryLayout)
-        }
-    }
+    inner class StationInfoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {}
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StationInfoViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_station_info, parent, false)
@@ -30,13 +24,15 @@ class StationInfoAdapter(
     }
 
     override fun getItemCount(): Int {
-        return station.size
+        return predictionList.size
     }
 
     override fun onBindViewHolder(holder: StationInfoViewHolder, position: Int) {
         holder.itemView.apply {
-            stationInfoName.text = station[position]
-            stationInfoImg.setImageResource(R.drawable.ic_launcher_foreground)
+            stationInfoName.text = predictionList[position].routeDestination
+            stationInfoDirection.text = predictionList[position].routeDirection + "bound"
+            stationInfoImg.setImageResource(predictionList[position].imgSrc)
+            arrival_time.text = predictionList[position].ETA
         }
     }
 }

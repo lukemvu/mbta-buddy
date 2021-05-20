@@ -10,12 +10,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //TODO
-        // 1.
+        val stationList = resources.getStringArray(R.array.rl_alewife_braintree)
 
-        val station_list = resources.getStringArray(R.array.rl_alewife_braintree)
+        val stationMap: Map<String, String> = resources.getStringArray(R.array.rl_alewife_braintree)
+            .zip(resources.getStringArray(R.array.rl_alewife_braintree_id))
+            .toMap()
 
-        val adapter = StationAdapter(applicationContext, station_list)
+        val adapter = StationAdapter(applicationContext, stationList, stationMap)
 
         stationsRecyclerView.adapter = adapter
         stationsRecyclerView.layoutManager = LinearLayoutManager(this)
