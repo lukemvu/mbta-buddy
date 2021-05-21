@@ -1,42 +1,33 @@
 package edu.umb.cs.mbtabuddy
 
-import android.gesture.Prediction
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.VibrationAttributes
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.gson.GsonBuilder
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_main.stationsRecyclerView
-import kotlinx.android.synthetic.main.activity_station_info.*
+import kotlinx.android.synthetic.main.activity_predictions.*
 import okhttp3.*
 import java.io.IOException
-import java.text.SimpleDateFormat
-import java.time.LocalDateTime
 import java.time.OffsetDateTime
 import java.time.format.DateTimeFormatter
 
 class StationInfo : AppCompatActivity() {
 
     companion object {
-        var routesData: Routes? = null
-        var predictionsData: Predictions? = null
+        val API_KEY: String = "dbb62ac4bb9144268d0fa66a1a147a93"
         val stationIcon: MutableMap<String, Int> = mutableMapOf()
-
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_station_info)
+        setContentView(R.layout.activity_predictions)
 
-        // Get station name & station id from previous activity
         val stationName: String = intent.getStringExtra("stationName").toString()
         val stationId: String = intent.getStringExtra("stationId").toString()
 
         val stationNameText = findViewById<TextView>(R.id.stationInfoNameTitle)
         stationNameText.text = stationName
 
-//        val stationIcon: MutableMap<String, Int> = mutableMapOf()
         stationIcon["Red"] = R.drawable.rl_icon
         stationIcon["Orange"] = R.drawable.ol_icon
         stationIcon["Mattapan"] = R.drawable.m_icon
@@ -48,22 +39,16 @@ class StationInfo : AppCompatActivity() {
         fetchRoutes(stationId)
     }
 
-    override fun onRestart() {
-        super.onRestart()
-        routesData = null
-        predictionsData = null
-    }
-
     fun fetchRoutes(stationId: String) {
-        val url = "https://api-v3.mbta.com/routes?filter[type]=0,1&filter[stop]=$stationId"
+        val url = "https://api-v3.mbta.com/routes?filter[type]=0,1&filter[stop]=$stationId&api_key=$API_KEY"
         val request = Request.Builder().url(url).build()
         val client = OkHttpClient()
         client.newCall(request).enqueue(object: Callback {
             override fun onResponse(call: Call, response: Response) {
                 val body = response?.body?.string()
                 val gson = GsonBuilder().create()
-                routesData = gson.fromJson(body, Routes::class.java)
-                fetchPredictions(stationId)
+                val routesData = gson.fromJson(body, Routes::class.java)
+                fetchPredictions(stationId, routesData)
             }
             override fun onFailure(call: Call, e: IOException) {
                 println("Failed to execute routes request")
@@ -71,17 +56,17 @@ class StationInfo : AppCompatActivity() {
         })
     }
 
-    fun fetchPredictions(stationId: String) {
-        val url = "https://api-v3.mbta.com/predictions?filter[stop]=$stationId&filter[route_type]=0,1"
+    fun fetchPredictions(stationId: String, routesData: Routes) {
+        val url = "https://api-v3.mbta.com/predictions?filter[stop]=$stationId&filter[route_type]=0,1&api_key=$API_KEY"
         val request = Request.Builder().url(url).build()
         val client = OkHttpClient()
         client.newCall(request).enqueue(object: Callback {
             override fun onResponse(call: Call, response: Response) {
-                val body = response?.body?.string()
+                val body = response.body?.string()
                 val gson = GsonBuilder().create()
-                predictionsData = gson.fromJson(body, Predictions::class.java)
+                val predictionsData = gson.fromJson(body, Predictions::class.java)
 
-                val plist = buildPredictionList(buildRoutesMap())
+                val plist = buildPredictionList(predictionsData, buildRoutesMap(routesData))
 
                 runOnUiThread {
                     val adapter = StationInfoAdapter(applicationContext, plist)
@@ -102,9 +87,9 @@ class StationInfo : AppCompatActivity() {
         return formatter.format(time)
     }
 
-    fun buildRoutesMap() : MutableMap<String, StationRoute> {
+    fun buildRoutesMap(routesData: Routes) : MutableMap<String, StationRoute> {
         var routesMap: MutableMap<String, StationRoute> = mutableMapOf()
-        for(route in routesData!!.data) {
+        for(route in routesData.data) {
             routesMap.putIfAbsent(
                     route.id,
                     StationRoute(
@@ -117,13 +102,18 @@ class StationInfo : AppCompatActivity() {
         return routesMap
     }
 
-    fun buildPredictionList(routesMap: MutableMap<String, StationRoute>) : MutableList<StopPrediction> {
+    fun buildPredictionList(
+        predictionsData: Predictions,
+        routesMap: MutableMap<String, StationRoute>
+    ) : MutableList<StopPrediction> {
         var predictionList: MutableList<StopPrediction> = mutableListOf()
         for(prediction in predictionsData!!.data) {
             val directionId = prediction.attributes.direction_id
             val routeId = prediction.relationships.route.data.id
-            val eta = getETA(prediction.attributes.arrival_time)
-            //TODO ADD NULL CHECK
+            var time = prediction.attributes.arrival_time
+            if (time==null) time = prediction.attributes.departure_time
+            if (time==null) continue
+            val eta = getETA(time)
             predictionList.add(StopPrediction(
                     routesMap[routeId]!!.direction_name[directionId],
                     routesMap[routeId]!!.direction_destination[directionId],
@@ -133,14 +123,12 @@ class StationInfo : AppCompatActivity() {
         }
         return predictionList
     }
-
-
 }
+
 
 class Routes(val data: List<Route>)
 class Route(val attributes: RouteAttribute, val id: String)
 class RouteAttribute(val direction_destinations: List<String>, val direction_names: List<String>)
-
 class Predictions(val data: List<edu.umb.cs.mbtabuddy.Prediction>)
 class Prediction(val attributes: PredictionAttribute, val relationships: PredictionRelationships)
 class PredictionAttribute(val arrival_time: String, val departure_time: String, val direction_id: Int)

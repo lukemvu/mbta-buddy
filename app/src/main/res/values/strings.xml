@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">MBTA Buddy</string>
+
     <string-array name="rl_alewife_braintree">
         <item>Alewife</item>
         <item>Davis</item>
@@ -83,7 +84,7 @@
         <item>place-asmnl</item>
     </string-array>
 
-    <string-array name="rlm_ashmont_mattapan">
+    <string-array name="rl_ashmont_mattapan">
         <item>Ashmont</item>
         <item>Cedar Grove</item>
         <item>Butler</item>
@@ -93,5 +94,260 @@
         <item>Capen St</item>
         <item>Mattapan</item>
     </string-array>
+
+    <string-array name="rl_ashmont_mattapan_id">
+        <item>place-asmnl</item>
+        <item>place-cedgr</item>
+        <item>place-butlr</item>
+        <item>place-miltt</item>
+        <item>place-cenav</item>
+        <item>place-valrd</item>
+        <item>place-capst</item>
+        <item>place-matt</item>
+    </string-array>
+
+    <string-array name="ol_oakgrove_foresthills">
+        <item>Oak Grove</item>
+        <item>Malden Center</item>
+        <item>Wellington</item>
+        <item>Assembly</item>
+        <item>Sullivan Sq</item>
+        <item>Community College</item>
+        <item>North Station</item>
+        <item>Haymarket</item>
+        <item>State St</item>
+        <item>Downtown Crossing</item>
+        <item>Chinatown</item>
+        <item>Tufts Medical Center</item>
+        <item>Back Bay</item>
+        <item>Mass. Ave</item>
+        <item>Ruggles</item>
+        <item>Roxbury Crossing</item>
+        <item>Jackson Sq</item>
+        <item>Stony Brook</item>
+        <item>Green St</item>
+        <item>Forest Hills</item>
+    </string-array>
+
+    <string-array name="ol_oakgrove_foresthills_id">
+        <item>place-ogmnl</item>
+        <item>place-mlmnl</item>
+        <item>place-welln</item>
+        <item>place-astao</item>
+        <item>place-sull</item>
+        <item>place-ccmnl</item>
+        <item>place-north</item>
+        <item>place-haecl</item>
+        <item>place-state</item>
+        <item>place-dwnxg</item>
+        <item>place-chncl</item>
+        <item>place-tumnl</item>
+        <item>place-bbsta</item>
+        <item>place-masta</item>
+        <item>place-rugg</item>
+        <item>place-rcmnl</item>
+        <item>place-jaksn</item>
+        <item>place-sbmnl</item>
+        <item>place-grnst</item>
+        <item>place-forhl</item>
+    </string-array>>
+
+    <string-array name="gl_bostoncollege_parkst">
+        <item>Boston College</item>
+        <item>South St</item>
+        <item>Chestnut Hill Ave</item>
+        <item>Chiswick Rd</item>
+        <item>Sutherland Rd</item>
+        <item>Washington St</item>
+        <item>Warren St</item>
+        <item>Allston St</item>
+        <item>Griggs St</item>
+        <item>Harvard Ave</item>
+        <item>Packards Corner</item>
+        <item>Babcock St</item>
+        <item>St. Paul St</item>
+        <item>BU West</item>
+        <item>BU Central</item>
+        <item>BU East</item>
+        <item>Blandford St</item>
+        <item>Kenmore</item>
+        <item>Hynes Convention Ctr</item>
+        <item>Copley</item>
+        <item>Arlington</item>
+        <item>Boylston</item>
+        <item>Park St</item>
+    </string-array>
+
+    <string-array name="gl_bostoncollege_parkst_id">
+        <item>place-lake</item>
+        <item>place-sougr</item>
+        <item>place-chhil</item>
+        <item>place-chswk</item>
+        <item>place-sthld</item>
+        <item>place-wascm</item>
+        <item>place-wrnst</item>
+        <item>place-alsgr</item>
+        <item>place-grigg</item>
+        <item>place-harvd</item>
+        <item>place-brico</item>
+        <item>place-babck</item>
+        <item>place-stpul</item>
+        <item>place-buwst</item>
+        <item>place-bucen</item>
+        <item>place-buest</item>
+        <item>place-bland</item>
+        <item>place-kencl</item>
+        <item>place-hymnl</item>
+        <item>place-coecl</item>
+        <item>place-armnl</item>
+        <item>place-boyls</item>
+        <item>place-pktrm</item>
+    </string-array>
+
+    <string-array name="gl_clevelandcircle_northstation">
+        <item>Cleveland  Circle</item>
+        <item>Englewood Ave</item>
+        <item>Dean Rd</item>
+        <item>Tappan St</item>
+        <item>Washington Sq</item>
+        <item>Fairbanks St</item>
+        <item>Brandon Hall</item>
+        <item>Summit Ave</item>
+        <item>Coolidge Corner</item>
+        <item>St. Paul St</item>
+        <item>Kent St</item>
+        <item>Hawes St</item>
+        <item>St. Mary\'s St</item>
+        <item>Kenmore</item>
+        <item>Hynes Convention Ctr</item>
+        <item>Copley</item>
+        <item>Arlington</item>
+        <item>Boylston</item>
+        <item>Park St</item>
+        <item>Gov\'t Center</item>
+        <item>Haymarket</item>
+        <item>North Station</item>
+    </string-array>
+
+    <string-array name="gl_clevelandcircle_northstation_id">
+        <item>place-clmnl</item>
+        <item>place-engav</item>
+        <item>place-denrd</item>
+        <item>place-tapst</item>
+        <item>place-bcnwa</item>
+        <item>place-fbkst</item>
+        <item>place-bndhl</item>
+        <item>place-sumav</item>
+        <item>place-cool</item>
+        <item>place-stplb</item>
+        <item>place-kntst</item>
+        <item>place-hwsst</item>
+        <item>place-smary</item>
+        <item>place-kencl</item>
+        <item>place-hymnl</item>
+        <item>place-coecl</item>
+        <item>place-armnl</item>
+        <item>place-boyls</item>
+        <item>place-pktrm</item>
+        <item>place-gover</item>
+        <item>place-haecl</item>
+        <item>place-north</item>
+    </string-array>
+
+    <string-array name="gl_riverside_govtcentr">
+        <item>Riverside</item>
+        <item>Woodland</item>
+        <item>Waban</item>
+        <item>Eliot</item>
+        <item>Newton Highlands</item>
+        <item>Newton Centre</item>
+        <item>Chestnut Hill</item>
+        <item>Reservoir</item>
+        <item>Beaconsfield</item>
+        <item>Brookline Village</item>
+        <item>Longwood</item>
+        <item>Fenway</item>
+        <item>Kenmore</item>
+        <item>Hynes Convention Ctr</item>
+        <item>Copley</item>
+        <item>Arlington</item>
+        <item>Boylston</item>
+        <item>Park St</item>
+        <item>Gov\'t Center</item>
+    </string-array>
+
+    <string-array name="gl_riverside_govtcentr_id">
+        <item>place-river</item>
+        <item>place-woodl</item>
+        <item>place-waban</item>
+        <item>place-eliot</item>
+        <item>place-newtn</item>
+        <item>place-newto</item>
+        <item>place-chhil</item>
+        <item>place-rsmnl</item>
+        <item>place-bcnfd</item>
+        <item>place-bvmnl</item>
+        <item>place-longw</item>
+        <item>place-fenwy</item>
+        <item>place-kencl</item>
+        <item>place-hymnl</item>
+        <item>place-coecl</item>
+        <item>place-armnl</item>
+        <item>place-boyls</item>
+        <item>place-pktrm</item>
+        <item>place-gover</item>
+    </string-array>
+
+    <string-array name="gl_heathst_lechmere">
+        <item>Heath St</item>
+        <item>Back of the Hill</item>
+        <item>Riverway</item>
+        <item>Mission Park</item>
+        <item>Fenwood Rd</item>
+        <item>Brigham Circle</item>
+        <item>Longwood Medical Area</item>
+        <item>Museum of Fine Arts</item>
+        <item>Northeastern</item>
+        <item>Symphony</item>
+        <item>Prudential</item>
+        <item>Copley</item>
+        <item>Arlington</item>
+        <item>Boylston</item>
+        <item>Park St</item>
+        <item>Gov\'t Center</item>
+        <item>Haymarket</item>
+        <item>North Station</item>
+        <item>Science Park/West End</item>
+        <item>Lechmere</item>
+    </string-array>
+
+    <string-array name="gl_heathst_lechmere_id">
+        <item>place-hsmnl</item>
+        <item>place-bckhl</item>
+        <item>place-rvrwy</item>
+        <item>place-mispk</item>
+        <item>place-fenwd</item>
+        <item>place-brmnl</item>
+        <item>place-lngmd</item>
+        <item>place-mfa</item>
+        <item>place-nuniv</item>
+        <item>place-symcl</item>
+        <item>place-prmnl</item>
+        <item>place-coecl</item>
+        <item>place-armnl</item>
+        <item>place-boyls</item>
+        <item>place-pktrm</item>
+        <item>place-gover</item>
+        <item>place-haecl</item>
+        <item>place-north</item>
+        <item></item>
+        <item></item>
+    </string-array>
+
+
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

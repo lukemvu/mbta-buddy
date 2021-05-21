@@ -1,20 +1,16 @@
 package edu.umb.cs.mbtabuddy
 
-import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.item_station.view.*
+import kotlinx.android.synthetic.main.adapter_station.view.*
 
 class StationAdapter(
-        var mContext: Context,
         var stationList: Array<String>,
-         var stationMap: Map<String, String>
+        var stationMap: Map<String, String>,
+        val stationColor: List<Int>
         ) : RecyclerView.Adapter<StationAdapter.StationViewHolder>() {
 
     inner class StationViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -26,11 +22,10 @@ class StationAdapter(
                 itemView.context.startActivity(intent)
             }
         }
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StationViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_station, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.adapter_station, parent, false)
         return StationViewHolder(view)
     }
 
@@ -41,12 +36,16 @@ class StationAdapter(
     override fun onBindViewHolder(holder: StationViewHolder, position: Int) {
         holder.itemView.apply {
             stationName.text = stationList[position]
-            val imgSrc = if (position==0) {
-                R.drawable.ic_rl_stop_top
-            } else if (position == stationList.size-1) {
-                R.drawable.ic_rl_stop_bottom
-            } else {
-                R.drawable.ic_red_station_middle
+            val imgSrc = when (position) {
+                0 -> {
+                    stationColor[0]
+                }
+                stationList.size-1 -> {
+                    stationColor[2]
+                }
+                else -> {
+                    stationColor[1]
+                }
             }
             stationImg.setImageResource(imgSrc)
         }
