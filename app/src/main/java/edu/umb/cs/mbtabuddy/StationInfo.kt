@@ -14,7 +14,7 @@ import java.time.format.DateTimeFormatter
 class StationInfo : AppCompatActivity() {
 
     companion object {
-        val API_KEY: String = "dbb62ac4bb9144268d0fa66a1a147a93"
+        const val API_KEY: String = "dbb62ac4bb9144268d0fa66a1a147a93"
         val stationIcon: MutableMap<String, Int> = mutableMapOf()
     }
 
@@ -110,8 +110,14 @@ class StationInfo : AppCompatActivity() {
         for(prediction in predictionsData!!.data) {
             val directionId = prediction.attributes.direction_id
             val routeId = prediction.relationships.route.data.id
+
+            // arrival times are null where routes originate form
             var time = prediction.attributes.arrival_time
+
+            // use departure time where arrival time is null
             if (time==null) time = prediction.attributes.departure_time
+
+            // skip predictions where there is no estiamted time
             if (time==null) continue
             val eta = getETA(time)
             predictionList.add(StopPrediction(
