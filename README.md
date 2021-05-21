@@ -3,7 +3,10 @@
 ## Use Instructions
 Users should be able to simply clone this git repo and import it into AndroidStudio to emulate/install onto their Android device.
 
-![Application Screenshots](https://github.com/drsooch/CS410-Pipeline/blob/master/images/CourtListenerGraph.png)
+![Application Screenshots](https://github.com/lukemvu/mbta-buddy/blob/main/img/preview1.png)
+![Application Screenshots](https://github.com/lukemvu/mbta-buddy/blob/main/img/preview2.png)
+![Application Screenshots](https://github.com/lukemvu/mbta-buddy/blob/main/img/preview3.png)
+![Application Screenshots](https://github.com/lukemvu/mbta-buddy/blob/main/img/preview4.png)
 
 ## Project Statement
 MBTA Buddy is an application that provides users with up to date train
