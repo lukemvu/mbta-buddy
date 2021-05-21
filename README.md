@@ -3,11 +3,8 @@
 ## Use Instructions
 Users should be able to simply clone this git repo and import it into AndroidStudio to emulate/install onto their Android device.
 
-<img src="https://github.com/lukemvu/mbta-buddy/blob/main/img/preview1.png" width=300>
-<img src="https://github.com/lukemvu/mbta-buddy/blob/main/img/preview2.png" width=300>
-
-<img src="https://github.com/lukemvu/mbta-buddy/blob/main/img/preview3.png" width=300>
-<img src="https://github.com/lukemvu/mbta-buddy/blob/main/img/preview4.png" width=300>
+<img src="https://github.com/lukemvu/mbta-buddy/blob/main/img/preview1.png" width=450 align=center>
+<img src="https://github.com/lukemvu/mbta-buddy/blob/main/img/preview4.png" width=450 align=center>
 <!-- ![Application Screenshots](https://github.com/lukemvu/mbta-buddy/blob/main/img/preview2.png)
 ![Application Screenshots](https://github.com/lukemvu/mbta-buddy/blob/main/img/preview3.png)
 ![Application Screenshots](https://github.com/lukemvu/mbta-buddy/blob/main/img/preview4.png) -->
